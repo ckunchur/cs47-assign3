@@ -9,6 +9,7 @@ export default function App() {
   // Pass in true to useSpotifyAuth to use the album ID (in env.js) instead of top tracks
   const { token, tracks, getSpotifyAuth } = useSpotifyAuth();
 
+  console.log(token);
   
   // if token is True, render FlatList
   // else, render Authentication button
