@@ -22,9 +22,6 @@ export default TrackList=({tracks}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.titleRow}>
-        <Text style={styles.titleText}>Grocery List</Text>
-      </View>
       <FlatList
         data={tracks} // the array of data that the FlatList displays
         renderItem={(item) => renderSong(item)} // function that renders each item
