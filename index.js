@@ -1,4 +1,4 @@
-import Button from './button';
-import Song from './song';
+import TrackList from './tracklist';
+import AuthButton from './button';
 
-export { Button, Song};
+export { TrackList, AuthButton };
