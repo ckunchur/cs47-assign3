@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Text, TouchableOpacity, Image, Button, Dimensions} from "react-native";
+import { StyleSheet, View, SafeAreaView, Text, TouchableOpacity, Image, Button, Dimensions} from "react-native";
 import { Images, Themes } from "../assets/Themes";
 
 
@@ -8,7 +8,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export default AuthButton = ({authFunction}) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
           <TouchableOpacity
             style={styles.button}
             onPress={authFunction}
@@ -16,7 +16,7 @@ export default AuthButton = ({authFunction}) => {
             <Image source={Images.spotify} style={styles.spotifyIcon}/>
             <Text style={styles.authText}>CONNECT WITH SPOTIFY</Text>
           </TouchableOpacity>
-        </View>
+        </SafeAreaView>
       );
 };
 
@@ -27,24 +27,27 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       alignItems: 'center',
       paddingHorizontal: 10,
-      flexDirection: row
+      flexDirection: 'row',
     },
     button: {
       alignItems: "center",
       backgroundColor: Themes.colors.spotify,
-      borderRadius: '100%',
-      padding: 10
+      borderRadius: 99999,
+      width: windowWidth * 0.8,
+      height: windowHeight * 0.09,
+      padding: 20,
+      flexDirection: 'row'
     },
     authText: {
       fontSize: windowWidth * 0.04,
       fontWeight: "bold",
       color: 'white',
-      flex: 5
+      marginLeft: 20
     },
     spotifyIcon: {
-        height: 0.1 * windowWidth,
-        width: 0.1 * windowWidth,
-        flex: 1
+        height: 0.08 * windowWidth,
+        width: 0.08 * windowWidth,
+        resizeMode: 'contain'
       },
   });
   
