@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Text} from "react-native";
+import { StyleSheet, SafeAreaView, Text, FlatList} from "react-native";
 import { Images, Themes } from "../assets/Themes";
 import Constants from 'expo-constants';
 import Song from './song';
@@ -8,7 +8,7 @@ import Song from './song';
 export default TrackList=({tracks}) => {
 
   const renderSong = ({item, index}) => (
-    <song
+    <Song
       id={item.id}
       songIndex={index}
       imageUrl={item.album.images} 
@@ -34,10 +34,9 @@ export default TrackList=({tracks}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    //flex: 1,
     justifyContent: 'center',
     backgroundColor: Themes.colors.background,
-    padding: 10,
   },
 });
 
