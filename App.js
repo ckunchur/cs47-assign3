@@ -11,29 +11,29 @@ export default function App() {
   // Pass in true to useSpotifyAuth to use the album ID (in env.js) instead of top tracks
   const { token, tracks, getSpotifyAuth } = useSpotifyAuth();
 
-  console.log(token);
-  console.log(tracks[0]);
   
   
+  let header = <View style={styles.titleRow}>
+  <Image source={Images.spotify} style={styles.spotifyIcon}/>
+  <Text style={styles.titleText}>My Top Tracks</Text>
+ </View>
+
   // if token is True, render FlatList
   // else, render Authentication button
 
   let contentDisplayed; // set equal to list component if true
   if (token) {
     // render Flatlist
-    contentDisplayed = <TrackList tracks={tracks}/>;
+    contentDisplayed = [header, <TrackList tracks={tracks}/>];
   }
   else { // if token false
     // render AuthButton
-    contentDisplayed = <AuthButton authFunction={getSpotifyAuth}/>
+    contentDisplayed = 
+    <AuthButton authFunction={getSpotifyAuth}/>
 
   }
   return (
-    <SafeAreaView style={styles.container}>
-    <View style={styles.titleRow}>
-        <Image source={Images.spotify} style={styles.spotifyIcon}/>
-        <Text style={styles.titleText}>My Top Tracks</Text>
-    </View>
+    <SafeAreaView style={styles.container}> 
       {contentDisplayed} 
     </SafeAreaView>
   );
