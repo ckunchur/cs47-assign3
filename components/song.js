@@ -23,25 +23,19 @@ const windowHeight = Dimensions.get('window').height;
   //order: index, image, songname above artist name, album name, time 
   const styles = StyleSheet.create({
     trackContainer: {
-      marginLeft: 10,
-      marginRight: 10,
-      marginVertical: 4,
+      marginLeft: 15,
+      marginVertical: 7,
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: 30,
-      width: '85%'
+      width: '95%',
+      height: '100%'
     },
     
     stackedBox: {
-        //flex: 4,
         flexDirection: 'column',
-        height: 0.1 * windowHeight,
-        //justifyContent: 'space-between',
-        backgroundColor: 'red',
-        //display: 'flex', 
-        width: '30%',
+        width: '35%',
     },
     stackedText: {
       fontSize: 14,
@@ -49,7 +43,7 @@ const windowHeight = Dimensions.get('window').height;
       
     },
     Text: {
-      marginLeft: 10,
+      marginLeft: 20,
       fontSize: 14,
       color: Themes.colors.white,
       width: '10%',
@@ -57,8 +51,8 @@ const windowHeight = Dimensions.get('window').height;
     },
 
     image: {
-      width: 0.25 * windowWidth,
-      height: 0.25 * windowWidth,
+      width: 0.1 * windowWidth,
+      height: 0.1 * windowWidth,
       margin: 10,
       resizeMode: 'contain'
     }

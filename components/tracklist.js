@@ -13,7 +13,7 @@ export default TrackList=({tracks}) => {
       songIndex={index}
       imageUrl={item.album.images} 
       songTitle={item.name}
-      artistName={item.artists.name}
+      artistName={item.artists[0].name}
       albumTitle={item.album.name}
       duration={item.duration_ms}
       />
